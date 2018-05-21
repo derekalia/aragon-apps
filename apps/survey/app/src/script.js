@@ -33,10 +33,7 @@ app.store(async (state, { event, returnValues }) => {
  ***********************/
 
 async function startSurvey(state, { surveyId }) {
-  const transform = ({ data, ...survey }) => ({
-    ...survey,
-    data: { ...data, executed: true },
-  })
+  const transform = survey => survey
   return updateState(state, surveyId, transform)
 }
 
